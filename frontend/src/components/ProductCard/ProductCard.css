@@ -1,0 +1,66 @@
+/* ProductCard Component */
+/* =============================================
+   RESPONSIVE: No media queries needed!
+   - Uses aspect-ratio (4/3) so images scale with grid
+   - Width comes from parent grid (1–4 cols by breakpoint)
+   - Same card works in any column count
+   ============================================= */
+
+.product-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-card__wrapper {
+  overflow: hidden;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: 
+    box-shadow 0.25s ease,
+    transform 0.25s ease,
+    border-color 0.2s ease;
+}
+
+.product-card:hover .product-card__wrapper {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+  border-color: #cbd5e1;
+}
+
+.product-card__image-wrap {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.product-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card:hover .product-card__image {
+  transform: scale(1.06);
+}
+
+.product-card__content {
+  padding: 1rem 1.25rem;
+}
+
+.product-card__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+}
+
+.product-card:hover .product-card__title {
+  color: #1e40af;
+}
