@@ -1,0 +1,195 @@
+/* Gate Configurator Page */
+
+.gate-configurator {
+  min-height: 80vh;
+  background: #020617;
+  color: #e2e8f0;
+}
+
+.gate-configurator__header {
+  padding: 2rem 1rem 1.5rem;
+  text-align: center;
+}
+
+.gate-configurator__title {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.gate-configurator__subtitle {
+  margin: 0.5rem 0 0;
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+.gate-configurator__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+@media (min-width: 900px) {
+  .gate-configurator__layout {
+    grid-template-columns: 1fr 320px;
+    gap: 2rem;
+    padding-inline: 2rem;
+  }
+}
+
+.gate-configurator__viewer {
+  position: relative;
+  min-height: 400px;
+  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  border-radius: 1rem;
+  border: 1px solid rgba(71, 85, 105, 0.5);
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .gate-configurator__viewer {
+    min-height: 500px;
+  }
+}
+
+.gate-configurator__loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-size: 1rem;
+}
+
+.gate-configurator__controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.gate-config__section {
+  padding: 1.25rem;
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 0.75rem;
+  border: 1px solid rgba(71, 85, 105, 0.4);
+}
+
+.gate-config__label {
+  margin: 0 0 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #cbd5e1;
+}
+
+.gate-config__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.gate-config__options--stacked {
+  flex-direction: column;
+}
+
+.gate-config__btn {
+  padding: 0.5rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #cbd5e1;
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(71, 85, 105, 0.6);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gate-config__btn:hover {
+  background: rgba(51, 65, 85, 0.9);
+  border-color: #64748b;
+}
+
+.gate-config__btn--active {
+  color: #0f172a;
+  background: linear-gradient(120deg, #f59e0b, #fbbf24);
+  border-color: #f59e0b;
+}
+
+.gate-config__btn--full {
+  width: 100%;
+  text-align: left;
+}
+
+.gate-config__color-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.gate-config__color-swatch {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 0.5rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.gate-config__color-swatch:hover {
+  transform: scale(1.08);
+}
+
+.gate-config__color-swatch--active {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.3);
+}
+
+.gate-config__custom {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.gate-config__custom label {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.gate-config__custom input[type="color"] {
+  width: 48px;
+  height: 36px;
+  padding: 2px;
+  border: 1px solid rgba(71, 85, 105, 0.6);
+  border-radius: 0.5rem;
+  background: transparent;
+  cursor: pointer;
+}
+
+.gate-configurator__cta {
+  margin-top: auto;
+}
+
+.gate-configurator__submit {
+  width: 100%;
+  padding: 0.9rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f172a;
+  background: linear-gradient(120deg, #f59e0b, #fbbf24);
+  border: none;
+  border-radius: 0.65rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gate-configurator__submit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.4);
+}

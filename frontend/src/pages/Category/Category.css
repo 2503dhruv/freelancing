@@ -23,10 +23,17 @@
   }
 }
 
+.category__loading,
+.category__empty {
+  color: #94a3b8;
+  text-align: center;
+  margin-top: 2rem;
+}
+
 .category__title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #0f172a;
+  color: #f8fafc;
   margin: 0 0 2rem;
   letter-spacing: -0.02em;
 }
