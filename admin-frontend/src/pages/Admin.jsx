@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { productsApi, categoriesApi, slidesApi, contactApi, api } from '../../services/api.js';
+import { productsApi, categoriesApi, slidesApi, contactApi, api } from '../services/api.js';
 import './Admin.css';
 
 const Admin = () => {
