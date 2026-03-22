@@ -16,6 +16,7 @@ app.use(cors({ origin: [
   "http://localhost:5174",
   "http://localhost:3000",
   "https://freelancing-seven.vercel.app",
+  "https://admin-seven-orcin-50.vercel.app/",
 ],
 credentials: true,}));
 app.use(express.json());
