@@ -6,10 +6,6 @@ const navLinks = [
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
   { to: "/configurator", label: "Design Your Gate" },
-  { to: "/category/gates", label: "Gates" },
-  { to: "/category/staircases", label: "Staircases" },
-  { to: "/category/railings", label: "Railings" },
-  { to: "/category/balconies", label: "Balconies" },
 ];
 
 export default function Header() {

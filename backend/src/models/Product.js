@@ -6,6 +6,7 @@ const productSchema = new mongoose.Schema(
     image: { type: String, required: true },
     category: { type: mongoose.Schema.Types.ObjectId, ref: "Category", required: true },
     description: { type: String },
+    hidden: { type: Boolean, default: false },
   },
   { timestamps: true }
 );

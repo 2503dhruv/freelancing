@@ -1,7 +1,6 @@
 import express from "express";
 import Product from "../models/Product.js";
 import Category from "../models/Category.js";
-import { protect } from "../middleware/auth.js";
 
 const router = express.Router();
 
@@ -44,7 +43,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.post("/", protect, async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const { title, image, category, description } = req.body;
     if (!title || !image || !category) {
@@ -65,7 +64,7 @@ router.post("/", protect, async (req, res) => {
   }
 });
 
-router.put("/:id", protect, async (req, res) => {
+router.put("/:id", async (req, res) => {
   try {
     const { title, image, category, description } = req.body;
     const product = await Product.findByIdAndUpdate(
@@ -80,7 +79,7 @@ router.put("/:id", protect, async (req, res) => {
   }
 });
 
-router.delete("/:id", protect, async (req, res) => {
+router.delete("/:id", async (req, res) => {
   try {
     const product = await Product.findByIdAndDelete(req.params.id);
     if (!product) return res.status(404).json({ message: "Not found" });

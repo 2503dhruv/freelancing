@@ -1,6 +1,5 @@
 import express from "express";
 import Category from "../models/Category.js";
-import { protect } from "../middleware/auth.js";
 
 const router = express.Router();
 
@@ -23,7 +22,7 @@ router.get("/:slug", async (req, res) => {
   }
 });
 
-router.post("/", protect, async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const { name, image } = req.body;
     const slug = name.toLowerCase().replace(/\s+/g, "-");
@@ -34,7 +33,7 @@ router.post("/", protect, async (req, res) => {
   }
 });
 
-router.put("/:id", protect, async (req, res) => {
+router.put("/:id", async (req, res) => {
   try {
     const { name, image, order } = req.body;
     const updates = {};
@@ -56,7 +55,7 @@ router.put("/:id", protect, async (req, res) => {
   }
 });
 
-router.delete("/:id", protect, async (req, res) => {
+router.delete("/:id", async (req, res) => {
   try {
     const category = await Category.findByIdAndDelete(req.params.id);
     if (!category) return res.status(404).json({ message: "Not found" });

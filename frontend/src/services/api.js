@@ -1,17 +1,11 @@
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
 
-function getToken() {
-  return localStorage.getItem("token");
-}
-
 async function request(endpoint, options = {}) {
   const url = `${API_URL}${endpoint}`;
   const headers = {
     "Content-Type": "application/json",
     ...options.headers,
   };
-  const token = getToken();
-  if (token) headers.Authorization = `Bearer ${token}`;
   const res = await fetch(url, { ...options, headers });
   const data = await res.json().catch(() => ({}));
   if (!res.ok) throw new Error(data.message || "Request failed");
@@ -43,9 +37,6 @@ export const slidesApi = {
 
 export const contactApi = {
   submit: (data) => api.post("/contact", data),
+  getAll: () => api.get("/contact"),
 };
 
-export const authApi = {
-  login: (email, password) => api.post("/auth/login", { email, password }),
-  register: (email, password) => api.post("/auth/register", { email, password }),
-};

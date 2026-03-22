@@ -1,10 +1,9 @@
 import express from "express";
 import Contact from "../models/Contact.js";
-import { protect } from "../middleware/auth.js";
 
 const router = express.Router();
 
-router.get("/", protect, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const contacts = await Contact.find().sort({ createdAt: -1 });
     res.json(contacts);

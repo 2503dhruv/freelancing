@@ -1,5 +1,7 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Admin from "./pages/Admin/Admin";
+
 import Layout from "./components/Layout/Layout";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
@@ -31,6 +33,7 @@ function App() {
           <Route path="/category/:slug" element={<Category />} />
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/upload" element={<UploadTest />} />
+          <Route path="/admin" element={<Admin />} />
         </Route>
       </Routes>
     </BrowserRouter>
@@ -38,3 +41,6 @@ function App() {
 }
 
 export default App;
+
+
+
